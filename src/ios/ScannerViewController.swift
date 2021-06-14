@@ -16,6 +16,7 @@ class ScannerViewController: UIViewController {
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    weak var delegate: ScannerViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

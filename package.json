@@ -1,0 +1,19 @@
+{
+  "name": "barcodescanner",
+  "version": "1.0.0",
+  "description": "Bar code scanner plugin for Cordova Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaiPrasanth108/BarcodeScanner.git"
+  },
+  "author": "Sai Prasanth R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaiPrasanth108/BarcodeScanner/issues"
+  },
+  "homepage": "https://github.com/SaiPrasanth108/BarcodeScanner#readme"
+}

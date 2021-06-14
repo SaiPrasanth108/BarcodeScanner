@@ -7,15 +7,16 @@ class BarCodeScanner : CDVPlugin{
     
     @objc(scanBarcode:) 
     func scanBarcode(_ command: CDVInvokedUrlCommand) {
-        
-        let vc = ScannerViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        vc.delegate = self
-        self.viewController.present(vc, animated: false, completion: nil)
-        
-        pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: barCode)
-        self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
+        DispatchQueue.main.async {
+            let vc = ScannerViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            self.viewController.present(vc, animated: false, completion: nil)
+            
+            self.pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: self.barCode)
+            self.commandDelegate!.send(self.pluginResult, callbackId: command.callbackId)
+        }
     }
     
 }

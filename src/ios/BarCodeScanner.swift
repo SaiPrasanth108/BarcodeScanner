@@ -14,8 +14,7 @@ class BarCodeScanner : CDVPlugin{
         vc.delegate = self
         self.viewController.present(vc, animated: false, completion: nil)
         
-        pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Done")
-        
+        pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: barCode)
         self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
     }
     
